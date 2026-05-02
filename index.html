@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rules Deathbat Blitar Raya</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rock+Salt&family=Metal+Mania&display=swap" rel="stylesheet">
     <style>
         :root {
             --accent-pink: #d4418e;
+            --deep-pink: #ff007f;
             --light-pink: #ffb7ce;
-            --bg-dark: #0f0f0f;
-            --card-bg: rgba(25, 20, 25, 0.8);
+            --bg-dark: #0a0a0a;
+            --card-bg: rgba(30, 20, 30, 0.6);
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: var(--accent-pink); border-radius: 10px; }
 
         * {
             margin: 0;
@@ -21,110 +27,166 @@
 
         body {
             background-color: var(--bg-dark);
-            background: radial-gradient(circle at center, #2c001e 0%, #000000 100%);
+            background: 
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://www.transparenttextures.com/patterns/dark-matter.png'),
+                radial-gradient(circle at center, #3d002a 0%, #000000 100%);
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
             padding: 40px 20px;
+            overflow-x: hidden;
         }
 
         .container {
             width: 100%;
             max-width: 700px;
             text-align: center;
+            z-index: 1;
         }
 
-        /* Logo Styling */
+        /* Logo Animation */
         .logo-wrapper {
             margin-bottom: 30px;
+            perspective: 1000px;
         }
 
         .logo {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 4px solid var(--accent-pink);
-            box-shadow: 0 0 20px rgba(212, 65, 142, 0.5);
+            border: 3px solid var(--accent-pink);
+            box-shadow: 0 0 30px rgba(212, 65, 142, 0.6);
             background: #fff;
             padding: 5px;
             object-fit: contain;
+            animation: floating 3s ease-in-out infinite;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo:hover {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         h1 {
             font-family: 'Rock Salt', cursive;
-            color: var(--light-pink);
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(212, 65, 142, 0.8);
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #fff, var(--light-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 8px rgba(212, 65, 142, 0.8));
         }
 
         .subtitle {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #aaa;
-            margin-bottom: 40px;
+            letter-spacing: 6px;
+            color: var(--accent-pink);
+            margin-bottom: 50px;
+            font-weight: 700;
+            opacity: 0.8;
         }
 
-        /* Rules Cards */
         .rules-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .rule-card {
             background: var(--card-bg);
-            border-left: 6px solid var(--accent-pink);
-            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 65, 142, 0.2);
+            border-left: 5px solid var(--accent-pink);
+            border-radius: 15px;
             padding: 25px;
             text-align: left;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
         }
 
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .rule-card:nth-child(1) { animation-delay: 0.1s; }
+        .rule-card:nth-child(2) { animation-delay: 0.2s; }
+        .rule-card:nth-child(3) { animation-delay: 0.3s; }
+        .rule-card:nth-child(4) { animation-delay: 0.4s; }
+        .rule-card:nth-child(5) { animation-delay: 0.5s; }
+        .rule-card:nth-child(6) { animation-delay: 0.6s; }
+        .rule-card:nth-child(7) { animation-delay: 0.7s; }
+
         .rule-card:hover {
-            transform: scale(1.02);
-            background: rgba(40, 30, 40, 0.9);
-            box-shadow: 0 0 20px rgba(212, 65, 142, 0.2);
+            transform: scale(1.03) translateX(10px);
+            background: rgba(50, 20, 40, 0.8);
+            border-left: 8px solid var(--deep-pink);
+            box-shadow: -10px 0 25px rgba(212, 65, 142, 0.3);
         }
 
         .rule-number {
-            color: var(--accent-pink);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            display: block;
-            letter-spacing: 1px;
+            color: var(--light-pink);
+            font-family: 'Metal Mania', cursive;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .rule-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
         }
 
         .rule-text {
-            color: #e0e0e0;
+            color: #d1d1d1;
             font-size: 0.95rem;
             line-height: 1.6;
-            margin-top: 8px;
+            margin-top: 10px;
+            font-weight: 400;
         }
 
-        footer {
-            margin-top: 50px;
+        /* Highlight untuk teks spesial di No 2 */
+        .highlight-text {
             color: var(--light-pink);
-            font-size: 0.85rem;
-            opacity: 0.7;
+            font-weight: 700;
+            text-transform: uppercase;
             font-style: italic;
         }
 
-        /* Responsive Settings */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            border-top: 1px solid rgba(212, 65, 142, 0.3);
+            color: var(--light-pink);
+            font-size: 0.9rem;
+            font-family: 'Rock Salt', cursive;
+            opacity: 0.8;
+        }
+
         @media (max-width: 480px) {
-            h1 { font-size: 1.4rem; }
-            .rule-card { padding: 18px; }
-            .rule-text { font-size: 0.85rem; }
+            h1 { font-size: 1.5rem; }
+            .subtitle { letter-spacing: 3px; }
+            .rule-card { padding: 20px; }
+            .rule-card:hover { transform: scale(1.02); }
         }
     </style>
 </head>
@@ -132,54 +194,53 @@
 
 <div class="container">
     <div class="logo-wrapper">
-        <!-- Pastikan file 211.jpeg berada di folder yang sama dengan file html ini -->
         <img src="211.jpeg" alt="Logo Deathbat Blitar Raya" class="logo">
     </div>
 
     <h1>Deathbat Blitar Raya</h1>
-    <p class="subtitle">PERATURAN GROUP</p>
+    <p class="subtitle">Official Rules & Guidelines</p>
 
     <div class="rules-container">
         <!-- Aturan 01 -->
         <div class="rule-card">
-            <span class="rule-number">01. <span class="rule-title">KERUKUNAN & PENGHORMATAN</span></span>
-            <p class="rule-text">Mari kita jaga keharmonisan dengan saling menghormati satu sama lain. Gunakanlah tutur kata yang baik dan hindari perdebatan yang menyinggung perbedaan SARA demi kenyamanan bersama.</p>
+            <span class="rule-number">01 <span class="rule-title">KERUKUNAN & PENGHORMATAN</span></span>
+            <p class="rule-text">Jaga keharmonisan dengan saling menghormati. Gunakan tutur kata yang baik dan hindari SARA demi kenyamanan bersama di rumah kedua kita ini.</p>
         </div>
 
-        <!-- Aturan 02 -->
+        <!-- Aturan 02: UPDATE KESETARAAN -->
         <div class="rule-card">
-            <span class="rule-number">02. <span class="rule-title">KETERTIBAN INFORMASI</span></span>
-            <p class="rule-text">Demi menjaga fokus diskusi seputar komunitas, mohon bantuan teman-teman untuk tidak mengirimkan materi promosi, jualan, atau pesan berantai yang kurang relevan di grup ini.</p>
+            <span class="rule-number">02 <span class="rule-title">KESETARAAN & PERSAUDARAAN</span></span>
+            <p class="rule-text">Di sini kita semua sama, para penikmat musik Avenged Sevenfold. Mari kita ramaikan komunitas ini tanpa memandang kasta atau senioritas. <span class="highlight-text">We are family!</span></p>
         </div>
 
         <!-- Aturan 03 -->
         <div class="rule-card">
-            <span class="rule-number">03. <span class="rule-title">APRESIASI KARYA RESMI</span></span>
-            <p class="rule-text">Wujud kecintaan kita pada Avenged Sevenfold ditunjukkan dengan mendukung karya mereka melalui kanal resmi. Mohon untuk tidak membagikan tautan musik bajakan.</p>
+            <span class="rule-number">03 <span class="rule-title">APRESIASI KARYA RESMI</span></span>
+            <p class="rule-text">Dukung Avenged Sevenfold melalui kanal resmi (Spotify, Apple Music, YouTube). No Piracy! Mari hargai karya idola kita.</p>
         </div>
 
         <!-- Aturan 04 -->
         <div class="rule-card">
-            <span class="rule-number">04. <span class="rule-title">ETIKA DI RUANG PUBLIK</span></span>
-            <p class="rule-text">Saat berkumpul atau mengadakan kegiatan di wilayah Blitar, mari kita bersama-sama menjaga sopan santun. Perilaku kita mencerminkan citra baik seluruh keluarga besar.</p>
+            <span class="rule-number">04 <span class="rule-title">ETIKA DI RUANG PUBLIK</span></span>
+            <p class="rule-text">Saat gathering di Blitar, jaga sopan santun. Ingat, atribut yang kita pakai membawa nama baik seluruh keluarga besar Deathbat.</p>
         </div>
 
         <!-- Aturan 05 -->
         <div class="rule-card">
-            <span class="rule-number">05. <span class="rule-title">MUSYAWARAH & MUFAKAT</span></span>
-            <p class="rule-text">Perbedaan pendapat adalah hal wajar. Jika terdapat sesuatu yang kurang berkenan, silakan sampaikan kepada pengurus secara santun dengan semangat kekeluargaan.</p>
+            <span class="rule-number">05 <span class="rule-title">MUSYAWARAH & MUFAKAT</span></span>
+            <p class="rule-text">Ada masalah? Sampaikan ke pengurus secara dingin dan santun. Kita selesaikan dengan semangat kekeluargaan, bukan provokasi.</p>
         </div>
 
         <!-- Aturan 06 -->
         <div class="rule-card">
-            <span class="rule-number">06. <span class="rule-title">MENGHARGAI RUANG PRIBADI</span></span>
-            <p class="rule-text">Mari kita hargai privasi setiap anggota dengan tidak menghubungi secara pribadi (PC) untuk keperluan yang kurang mendesak tanpa izin terlebih dahulu.</p>
+            <span class="rule-number">06 <span class="rule-title">MENGHARGAI RUANG PRIBADI</span></span>
+            <p class="rule-text">Dilarang PC (Private Chat) anggota lain untuk hal yang tidak penting atau mengganggu kenyamanan privasi orang lain.</p>
         </div>
 
         <!-- Aturan 07 -->
         <div class="rule-card">
-            <span class="rule-number">07. <span class="rule-title">SEMANGAT KEBERSAMAAN</span></span>
-            <p class="rule-text">Mari kita sambut setiap anggota baru dengan tangan terbuka. Kehadiran teman-teman dalam setiap agenda sangat berarti untuk mempererat tali persaudaraan kita.</p>
+            <span class="rule-number">07 <span class="rule-title">SEMANGAT KEBERSAMAAN</span></span>
+            <p class="rule-text">Sambut member baru dengan hangat. Keaktifanmu di setiap agenda adalah bahan bakar komunitas ini untuk terus terbang tinggi.</p>
         </div>
     </div>
 

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules Deathbat Blitar Raya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-pink: #d4418e;
+            --light-pink: #ffb7ce;
+            --bg-dark: #0f0f0f;
+            --card-bg: rgba(25, 20, 25, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background: radial-gradient(circle at center, #2c001e 0%, #000000 100%);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        /* Logo Styling */
+        .logo-wrapper {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-pink);
+            box-shadow: 0 0 20px rgba(212, 65, 142, 0.5);
+            background: #fff;
+            padding: 5px;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-family: 'Rock Salt', cursive;
+            color: var(--light-pink);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(212, 65, 142, 0.8);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        /* Rules Cards */
+        .rules-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .rule-card {
+            background: var(--card-bg);
+            border-left: 6px solid var(--accent-pink);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .rule-card:hover {
+            transform: scale(1.02);
+            background: rgba(40, 30, 40, 0.9);
+            box-shadow: 0 0 20px rgba(212, 65, 142, 0.2);
+        }
+
+        .rule-number {
+            color: var(--accent-pink);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        .rule-title {
+            text-transform: uppercase;
+        }
+
+        .rule-text {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: var(--light-pink);
+            font-size: 0.85rem;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.4rem; }
+            .rule-card { padding: 18px; }
+            .rule-text { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-wrapper">
+        <!-- Pastikan file 211.jpeg berada di folder yang sama dengan file html ini -->
+        <img src="211.jpeg" alt="Logo Deathbat Blitar Raya" class="logo">
+    </div>
+
+    <h1>Deathbat Blitar Raya</h1>
+    <p class="subtitle">A7X Nation Indonesia</p>
+
+    <div class="rules-container">
+        <!-- Aturan 01 -->
+        <div class="rule-card">
+            <span class="rule-number">01. <span class="rule-title">KERUKUNAN & PENGHORMATAN</span></span>
+            <p class="rule-text">Mari kita jaga keharmonisan dengan saling menghormati satu sama lain. Gunakanlah tutur kata yang baik dan hindari perdebatan yang menyinggung perbedaan SARA demi kenyamanan bersama.</p>
+        </div>
+
+        <!-- Aturan 02 -->
+        <div class="rule-card">
+            <span class="rule-number">02. <span class="rule-title">KETERTIBAN INFORMASI</span></span>
+            <p class="rule-text">Demi menjaga fokus diskusi seputar komunitas, mohon bantuan teman-teman untuk tidak mengirimkan materi promosi, jualan, atau pesan berantai yang kurang relevan di grup ini.</p>
+        </div>
+
+        <!-- Aturan 03 -->
+        <div class="rule-card">
+            <span class="rule-number">03. <span class="rule-title">APRESIASI KARYA RESMI</span></span>
+            <p class="rule-text">Wujud kecintaan kita pada Avenged Sevenfold ditunjukkan dengan mendukung karya mereka melalui kanal resmi. Mohon untuk tidak membagikan tautan musik bajakan.</p>
+        </div>
+
+        <!-- Aturan 04 -->
+        <div class="rule-card">
+            <span class="rule-number">04. <span class="rule-title">ETIKA DI RUANG PUBLIK</span></span>
+            <p class="rule-text">Saat berkumpul atau mengadakan kegiatan di wilayah Blitar, mari kita bersama-sama menjaga sopan santun. Perilaku kita mencerminkan citra baik seluruh keluarga besar.</p>
+        </div>
+
+        <!-- Aturan 05 -->
+        <div class="rule-card">
+            <span class="rule-number">05. <span class="rule-title">MUSYAWARAH & MUFAKAT</span></span>
+            <p class="rule-text">Perbedaan pendapat adalah hal wajar. Jika terdapat sesuatu yang kurang berkenan, silakan sampaikan kepada pengurus secara santun dengan semangat kekeluargaan.</p>
+        </div>
+
+        <!-- Aturan 06 -->
+        <div class="rule-card">
+            <span class="rule-number">06. <span class="rule-title">MENGHARGAI RUANG PRIBADI</span></span>
+            <p class="rule-text">Mari kita hargai privasi setiap anggota dengan tidak menghubungi secara pribadi (PC) untuk keperluan yang kurang mendesak tanpa izin terlebih dahulu.</p>
+        </div>
+
+        <!-- Aturan 07 -->
+        <div class="rule-card">
+            <span class="rule-number">07. <span class="rule-title">SEMANGAT KEBERSAMAAN</span></span>
+            <p class="rule-text">Mari kita sambut setiap anggota baru dengan tangan terbuka. Kehadiran teman-teman dalam setiap agenda sangat berarti untuk mempererat tali persaudaraan kita.</p>
+        </div>
+    </div>
+
+    <footer>
+        "A Little Piece of Heaven in Blitar City"
+    </footer>
+</div>
+
+</body>
+</html>
